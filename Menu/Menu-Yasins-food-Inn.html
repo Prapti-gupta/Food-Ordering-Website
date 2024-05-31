@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasin's Food Menu</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Menu-styles.css"/>
+    <script>
+        function addToCart(itemName, itemPrice) {
+            // Assuming you're using localStorage to store cart items
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let existingItem = cart.find(cartItem => cartItem.name === itemName);
+            if (existingItem) {
+                existingItem.quantity++; // If item already exists in cart, increment quantity
+            } else {
+                // If item doesn't exist, add it with quantity set to 1
+                cart.push({ name: itemName, price: itemPrice, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="nav-logo border" >
+                <div class="logo"><img src="../logo.png" style="height: 50px; border-radius: 5px;"/></div>
+            </div>
+
+            <div class="nav-address border">
+                <p class="add-first">Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-second"><b>India</b></p>
+                </div>
+            </div>
+
+            <div class="nav-search">
+               
+                <input placeholder="Search Restaurants" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div class="nav-Login border">
+              <p class="nav-first"><a href="../Login-SignUp-Download/LoginIn.html" style="color: #FFFDD0; text-decoration: none;">   Login</a> </p>
+            </div>
+
+            <div class="nav-Signup border">
+                <p class="nav-first"><a href="../Login-SignUp-Download/SignUp.html" style="color: #FFFDD0; text-decoration: none;">  SignUp</a></p>
+ 
+              </div>
+
+              <div class="nav-download border">
+                <p class="nav-first"><a href="../Login-SignUp-Download/download-app/download.html" style="color: #FFFDD0; text-decoration: none;"> Download App</a> </p>
+ 
+              </div>
+
+              <a href="#" style="color: #FFFDD0;"><i class="fa-regular fa-user" style="font-size: x-large;"></i></a>
+        </div>
+        
+        
+        <div class="panel">
+            <div class="panel-all">
+                
+                <a href="#" style="color: #FFFDD0; text-decoration: none;"><i class="fa-solid fa-bars" style="font-size: x-large;"></i></a>
+            </div>
+ 
+            <div class="panel-ops ">
+                <p><a href="../index.html" style="color: #FFFDD0; text-decoration: none; margin-left: 2.5%;">HOME</a></p>
+                <p><a href="#" style="color: #FFFDD0; text-decoration: none;">OFFERS</a></p>
+                <p><a href="../about/about.html" style="color: #FFFDD0; text-decoration: none;">ABOUT US</a></p>
+                <p><a href="../feedback/survey.html"style="color: #FFFDD0; text-decoration: none;">FEEDBACK</a></p>
+                <p><a href="../help/help.html" style="color: #FFFDD0; text-decoration: none;">HELP</a></p>
+            </div>
+            <div class="panel-deals" >
+                <div class="nav-cart border">
+                    
+                    <a href="../Menu/Final Shopping Cart.html" style="color: #FFFDD0; text-decoration: none;"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+                  </div>
+            </div>
+          </div>
+   
+
+    </header>
+    
+     <div class="main_box" style="height: 3100px;">
+        <br/>
+     <div class="container">
+        <img src="../Restaurants/Yasin_s-Food-Inn.jpg" alt="Yasin_s-Food-Inn" style="width: 768px; height: 450px;">
+        <div class="bottom-center" >Yasin's Food Inn</div>
+        <div class="bottom-right">Rating: <br/> 4.2 <i class="fa-solid fa-star"></i></div>
+     </div>
+     <br/>
+     <h3 style="padding-left: 20px;">Offers: </h3>
+
+     <div class="offer-box">
+        <div class="box-content">
+            <p><b>50% OFF UPTO &#8377; 100</b></p>
+            
+        </div>
+     </div>
+
+     <div class="offer-box">
+        <div class="box-content">
+            <p><b>FLAT &#8377;125 OFF</b> </p>
+        </div>
+     </div>
+
+     <div class="offer-box">
+        <div class="box-content">
+            <p><b> &#8377;75 OFF ON CARDS</b> </p>
+        </div>
+     </div>
+
+     <div class="offer-box">
+        <div class="box-content">
+            <p><b> FREEBIES </b> </p>
+        </div>
+     </div><br/><br/>
+
+     <p style="margin-left: 10px; color: green;"><input type="checkbox" id="Veg"><b> Veg Only</b></p><br/>
+
+     <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+     <h2 style="margin-left: 10px; ;">Veg Combo (5) </h2>
+<br/><br/>
+
+
+     <div class="dish">
+        
+        <img src="veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="yasin-food-inn/dish1.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 150px; width: 180px;">
+        
+        <p><b>Veg Biryani Combo/thali</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 247.32/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Veg Biryani, Paneer Tikka [2 Pieces], Raita, doodhi halwa OR gajar halwa</p>
+        <button onclick="addToCart('Veg Biryani Combo/thali', 247.32)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+<br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+    <div class="dish">
+        
+        <img src="veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="yasin-food-inn/dish2.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 150px; width: 180px;">
+        
+        <p><b>Veg Fried Rice Combo/thali</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 247.32/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Veg Fried Rice, Paneer Shanghai [2 Pieces], Schezwan Sauce, doodhi halwa OR gajar halwa</p>
+        <button onclick="addToCart('Veg Fried Rice Combo/thali', 247.32)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+
+    <div class="dish">
+        
+        <img src="veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="yasin-food-inn/dish3.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 150px; width: 180px;">
+        
+        <p><b>Veg Hakka Noodles Combo/thali</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 247.32/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Veg Hakka Noodles, Paneer Crispy, Schezwan Sauce, Gulab Jamun [2 Pieces]</p>
+        <button onclick="addToCart('Veg Hakka Noodles Combo/thali', 247.32)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+    <div class="dish">
+        
+        <img src="veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="yasin-food-inn/dish4.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 150px; width: 180px;">
+        
+        <p><b>Veg Kadai Combo/thali</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 279.72/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Veg Kadai, Paneer Tikka [2 Pieces], Rumali Roti [1 Piece], Chapati [1 Piece], Kachumber, doodhi halwa OR gajar halwa</p>
+        <button onclick="addToCart('Veg Kadai Combo/thali', 279.72)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+
+    <div class="dish">
+        
+        <img src="veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="yasin-food-inn/dish5.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 150px; width: 180px;">
+        
+        <p><b>Veg Makhanwala Combo/thali</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 290.52/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Veg Makhanwala, Paneer Tikka [2 Pieces], Rumali Roti [1 Piece], Chapati [1 Piece], Kachumber, Gulab Jamun [2 Pieces]</p>
+        <button onclick="addToCart('Veg Makhanwala Combo/thali', 290.52)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+    <h2 style="margin-left: 10px; ;">Signature Snacks (4) </h2><br/><br/>
+
+    <div class="dish">
+        
+        <img src="non-veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="yasin-food-inn/dish6.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 150px; width: 180px;">
+        
+        <p><b>Cheesy Chicken Nuggets (6 Pcs)</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 140.40/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Crispy Chicken Nuggets With A Savory Surprise Inside - Oozing With Melted Cheese For A Delightful Twist On A Classic Favorite.</p>
+        <button onclick="addToCart('Cheesy Chicken Nuggets (6 Pcs)', 140.40)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+
+    <div class="dish">
+        
+        <img src="non-veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="yasin-food-inn/dish7.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 150px; width: 180px;">
+        
+        <p><b>Chicken Pocket Samosa (6 Pcs)</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 140.40/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">A Savory And Pocket-Sized Pastry Filled With Flavorful Chicken Stuffing, Perfect For A Quick And Delicious Snack.</p>
+        <button onclick="addToCart('Chicken Pocket Samosa (6 Pcs)', 140.40)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+
+    <div class="dish">
+        
+        <img src="non-veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="yasin-food-inn/dish8.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 150px; width: 180px;">
+        
+        <p><b>Chicken Pocket Spring Roll (6 Pcs)</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 140.40/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">A Delightful Fusion Of Crispy Spring Roll Pastry Filled With Seasoned Chicken, Creating A Savory And Convenient Snack Or Appetizer.</p>
+        <button onclick="addToCart('Chicken Pocket Spring Roll (6 Pcs)', 140.40)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+
+    <div class="dish">
+        
+        <img src="non-veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="yasin-food-inn/dish9.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 150px; width: 180px;">
+        
+        <p><b>Chicken Cheesy Calzone (1 Pc)</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 106.92/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">A Delicious Folded Pizza Pocket Filled With Tender Chicken And Gooey Melted Cheese.
+        </p>
+        <button onclick="addToCart('Chicken Cheesy Calzone (1 Pc)', 106.92)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+    
+    
+<p align="center" style="font-size: medium;"><b> View More</b><i class="fa-solid fa-angle-down"></i></p>
+
+     </div>
+
+
+
+
+    <footer>
+        <div class="foot-panel1">
+            <a href="Menu-Yasins-food-Inn.html" style="text-decoration: none; color: #FFFDD0;"> Back to Top</a> 
+        </div>
+    
+        <div class="foot-panel2">
+            <ul>
+                <p><b>Get to Know us</b></p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Reations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+            </ul>
+    
+            <ul>
+                <p><b>Make Money with Us</b></p>
+                <a>Sell products on Amazon</a>
+                <a>Sell on Amazon Business</a>
+                <a>Sell apps on Amazon</a>
+                <a>Become an Affiliate</a>
+                <a>Adevertise Your Products</a>
+                <a>Self-Publish with Us</a>
+                <a>Host an Amzon Hub</a>
+                <a>See more Make Money with Us</a>
+            </ul>
+    
+            <ul>
+                <p><b>Amazon Pyment Products</b></p>
+                <a>Amazon Business Card</a>
+                <a>Shop with Points</a>
+                <a>Reload Your Balance</a>
+                <a>AmazonCurrency Convertor</a>
+            </ul>
+    
+            <ul>
+                <p><b>Let Us Help You</b></p>
+                <a>Amazon and COVID-19</a>
+                <a>Your Account</a>
+                <a>Your Orders</a>
+                <a>Shopping Rates & Policies</a>
+                <a>Returns & Replacements</a>
+                <a> Manage Your Content and Devices</a>
+                <a>Amazon Assistant</a>
+                <a>Help</a>
+    
+            </ul>
+        </div>
+    
+        <div class="foot-panel3">
+            <div class="logo"><img src="logo.png" style="height: 60px; width: 100px;"></div>
+        </div>
+    
+        <div class="foot-panel4">
+            <div class="pages">
+                <a>Conditions of Use</a>
+                <a>Privacy Notice</a>
+                <a> Your ads Privacy Choices</a>
+            </div>
+            
+            <div class="copyright">
+                (c) 1996-2024, tastytrails.com, Inc. or its affiliates
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

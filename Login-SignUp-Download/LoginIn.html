@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Up / Sign Up</title>
+
+     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    background-image: url('login_background.jpeg');
+    background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    color: #f0f0f0;
+}
+
+#form {
+    width: 300px;
+    margin: 20vh auto 0 auto;
+    padding: 20px;
+    background: transparent;
+    border-radius: 4px;
+    font-size: 12px;
+
+    position: relative;
+    width: 450px;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius:15px;
+    padding: 3.5em 2.5em 4em 2.5em;
+    color:var(--second-color);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
+}
+
+#form h1 {
+    color: white;
+    text-align: center;
+}
+
+#form button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+    background-color: rgb(41, 57, 194);
+    border: none;
+    border-radius: 4px;
+}
+
+.input{
+    background-color: transparent;
+}
+
+.input-control {
+    display: flex;
+    padding-right: 20px;
+    
+    flex-direction: column;
+    
+}
+
+.input-control input {
+    border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-size: 12px;
+	padding: 10px;
+	width: 100%;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form id="form" action="/">
+            <h1>LogIn</h1>
+            <div class="input-control">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text"   >
+                <div class="error"></div>
+            </div>
+            
+            
+            <div class="input-control">
+                <label for="password">Password</label>
+                <input id="password"name="password" type="password">
+                <div class="error"></div>
+            </div>
+           
+            <button type="submit">Login In</button>
+                
+            
+        </form>
+    </div>
+   
+<script>
+    const form = document.getElementById('form');
+const username = document.getElementById('username');
+
+const password = document.getElementById('password');
+
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    validateInputs();
+});
+
+const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add('error');
+    inputControl.classList.remove('success')
+}
+
+const setSuccess = element => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+};
+
+
+
+const validateInputs = () => {
+    const usernameValue = username.value.trim();
+    const passwordValue = password.value.trim();
+
+    if(usernameValue === '') {
+        setError(username, 'Username is required');
+    } else {
+        setSuccess(username);
+    }
+
+    if(passwordValue === '') {
+        setError(password, 'Password is required');
+    } else if (passwordValue.length < 8 ) {
+        setError(password, 'Password must be at least 8 character.')
+    } else {
+        setSuccess(password);
+    }
+
+};
+</script>
+
+
+
+
+   
+</body>
+</html>
+

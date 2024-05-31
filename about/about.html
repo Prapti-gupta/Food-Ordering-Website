@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../style.css">
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .main {
+            font-size: 22px;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 700px;
+            background-color: #ffda00;
+        }
+
+        .image-container {
+            width: 50%;
+            position: relative;
+            transition: transform 1.9s ease-in-out;
+            transform-origin: center;
+        }
+
+        .image-container.loaded {
+            transform: scale(0.9);
+        }
+
+        .image-container img {
+            width: 70%;
+            height: auto;
+            margin-left: 75%;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            margin-top: 15%;
+            text-align: center;
+            color: black;
+            font-size: 80px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 20px;
+            color: gray;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+
+        h1 {
+            font-size: 25px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .container2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .box {
+            height: 450px;
+            background-color: #81562c;
+            color:white;
+            transition: transform 0.3s ease;
+            text-align: center;
+            padding: 30px;
+            box-sizing: border-box;
+            margin-right: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .b1 {
+            flex: 2;
+            height: 550px;
+            margin-top: 10px;
+            margin-right: 50px;
+        }
+
+        .b2,
+        .b3,
+        .b4 {
+            flex: 1;
+            margin-top: calc((550px - 250px) / 2);
+            margin-bottom: calc((550px - 250px) / 2);
+        }
+
+        .b2:hover {
+            transform: scale(1.1);
+        }
+
+        .b3:hover {
+            transform: scale(1.1);
+        }
+
+        .b4:hover {
+            transform: scale(1.1);
+        }
+
+        .box h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .box p {
+            font-size: 24px;
+            color: whitesmoke;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #ffda00;
+            font-size: large;
+            color: #654321;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #f3d00b;
+        }
+
+        .choose {
+            font-size: 15px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="nav-logo border" >
+                <div class="logo"><img src="logo.png" style="height: 50px; border-radius: 5px;"/></div>
+            </div>
+
+            <div class="nav-address border">
+                <p class="add-first">Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-second"><b>India</b></p>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <input placeholder="Search Restaurants" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div class="nav-Login border">
+              <p class="nav-first"><a href="../Login-SignUp-Download/LoginIn.html" style="color: #FFFDD0; text-decoration: none;">   Login</a> </p>
+            </div>
+
+            <div class="nav-Signup border">
+                <p class="nav-first"><a href="../Login-SignUp-Download/SignUp.html" style="color: #FFFDD0; text-decoration: none;">  SignUp</a></p>
+ 
+              </div>
+
+              <div class="nav-download border">
+                <p class="nav-first"><a href="../Login-SignUp-Download/download-app/download.html" style="color: #FFFDD0; text-decoration: none;"> Download App</a> </p>
+ 
+              </div>
+
+              <a href="#" style="color: #FFFDD0;"><i class="fa-regular fa-user" style="font-size: x-large;"></i></a>
+        </div>
+        
+        
+        <div class="panel">
+            <div class="panel-all">
+                
+                <a href="#" style="color: #FFFDD0; text-decoration: none;"><i class="fa-solid fa-bars" style="font-size: x-large;"></i></a>
+            </div>
+ 
+            <div class="panel-ops ">
+                <p><a href="../index.html" style="color: #FFFDD0; text-decoration: none; margin-left: 2.5%;">HOME</a></p>
+                <p><a href="#" style="color: #FFFDD0; text-decoration: none;">OFFERS</a></p>
+                <p><a href="about.html" style="color: #FFFDD0; text-decoration: none;">ABOUT US</a></p>
+                <p><a href="../feedback/survey.html" style="color: #FFFDD0; text-decoration: none;">FEEDBACK</a></p>
+                <p><a href="../help/help.html" style="color: #FFFDD0; text-decoration: none;">HELP</a></p>
+            </div>
+            <div class="panel-deals" >
+                <div class="nav-cart border">
+                    
+                    <a href="../Menu/Final Shopping Cart.html" style="color: #FFFDD0; text-decoration: none;"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+                  </div>
+            </div>
+          </div>
+    </header>
+    
+<script>
+    window.onload = function() {
+    setTimeout(function() {
+      document.querySelector('.image-container').classList.add('loaded');
+    }, 1000); 
+  }
+</script>
+
+<div class="container">
+    <div class="text-overlay">ENJOY YOUR <br>HEALTHY<br> DELICIOUS FOOD</div>
+    <div class="image-container">
+        <img src="hero-img.png">
+    </div>
+</div>
+<br><br>
+<h1>LEARN MORE </h1>
+<h2>ABOUT US</h2>
+<br>
+
+<p class="main"> Welcome to Tasty Trails, your ultimate destination for delicious food delivered straight to your doorstep. At Tasty Trails, we're passionate about connecting hungry customers with their favorite local restaurants, cafes, and eateries. Whether you're craving mouthwatering pizza, sizzling burgers, exotic sushi, or wholesome salads, we've got you covered.<br>
+<br>Ordering with Tasty Trails is as easy as pie. Simply browse through our extensive menu options, select your favorite dishes, and place your order with a few clicks. Our dedicated team of delivery drivers will then spring into action, ensuring that your food arrives piping hot and ready to devour. With real-time tracking, you can monitor the progress of your order every step of the way, giving you peace of mind and ultimate convenience.</p>
+
+<div class="container2">
+    <div class="box b1">
+        <h3>Why Choose Tasty Trails?</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur itaque ipsa, voluptas eum, quos, assumenda consequuntur nostrum possimus minima laudantium illum nihil! Labore, architecto voluptate. Laudantium aperiam esse quis minus.</p>
+        <a href="#" class="button">Learn More</a>
+    </div>
+    <div class="box b2">
+        <h3 class="choose">Delivery Service</h3>
+        <p>Committed to providing efficient and reliable delivery service, ensuring that your food arrives fresh and on time.  </p>
+    </div>
+    <div class="box b3">
+        <h3>Extensive Selection</h3>
+        <p>Offers an extensive selection of restaurants & cuisines, ensuring that customers have access to a wide variety of delicious options. </p>
+    </div>
+    <div class="box b4">
+        <h3>Ordering Experience</h3>
+        <p>Our intuitive app and website make it easy to browse menus, place orders, and track delivery status in real-time.</p>
+    </div>
+</div>
+<footer>
+    <div class="foot-panel1">
+        <a href="index.html" style="text-decoration: none; color: #FFFDD0;"> Back to Top</a> 
+    </div>
+
+    <div class="foot-panel2">
+        <ul>
+            <p><b>Get to Know us</b></p>
+            <a>Careers</a>
+            <a>Blog</a>
+            <a>About Amazon</a>
+            <a>Investor Reations</a>
+            <a>Amazon Devices</a>
+            <a>Amazon Science</a>
+        </ul>
+
+        <ul>
+            <p><b>Make Money with Us</b></p>
+            <a>Sell products on Amazon</a>
+            <a>Sell on Amazon Business</a>
+            <a>Sell apps on Amazon</a>
+            <a>Become an Affiliate</a>
+            <a>Adevertise Your Products</a>
+            <a>Self-Publish with Us</a>
+            <a>Host an Amzon Hub</a>
+            <a>See more Make Money with Us</a>
+        </ul>
+
+        <ul>
+            <p><b>Amazon Payment Products</b></p>
+            <a>Amazon Business Card</a>
+            <a>Shop with Points</a>
+            <a>Reload Your Balance</a>
+            <a>AmazonCurrency Convertor</a>
+        </ul>
+
+        <ul>
+            <p><b>Let Us Help You</b></p>
+            <a>Amazon and COVID-19</a>
+            <a>Your Account</a>
+            <a>Your Orders</a>
+            <a>Shopping Rates & Policies</a>
+            <a>Returns & Replacements</a>
+            <a> Manage Your Content and Devices</a>
+            <a>Amazon Assistant</a>
+            <a>Help</a>
+
+        </ul>
+    </div>
+
+    <div class="foot-panel3">
+        <div class="logo"><img src="logo.png" style="height: 60px; width: 100px;"></div>
+    </div>
+
+    <div class="foot-panel4">
+        <div class="pages">
+            <a>Conditions of Use</a>
+            <a>Privacy Notice</a>
+            <a> Your ads Privacy Choices</a>
+        </div>
+        
+        <div class="copyright">
+            (c) 1996-2024, Amazon.com, Inc. or its affiliates
+        </div>
+    </div>
+</footer>
+</body>
+</html>

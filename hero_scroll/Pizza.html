@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pizza</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="contact.css">
+    <style>
+      h1{
+        font-size:35px;
+      }
+
+        button{
+            width:175px;
+            height:40px;
+            border-radius: 25px;
+            background-color: white;
+            text-align: center;
+        }
+        .filter{
+            width:100px;
+            height:40px;
+            border-radius: 25px;
+            background-color: white;
+            text-align: center;
+        }
+        .sort-by{
+            width:100px;
+            height:40px;
+            border-radius: 25px;
+            background-color: white;
+            text-align: center;
+        }
+        h3{
+          font-weight: bold;
+        }
+        .top{
+  padding:20px;
+}
+
+
+body {
+  margin: 10;
+}
+
+.restaurant-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4px;
+}
+
+.restaurant-item {
+  position: relative;
+  overflow: hidden;
+  flex: 0.5px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.restaurant-item img {
+  width: 300px;
+  height: 350px;
+  border-radius: 20px;
+  transition: transform .2s ease-in-out;
+}
+
+.restaurant-item:hover img {
+  width:275px;
+  height:325px;
+  border-radius: 15px;
+}
+
+.restaurant-content {
+  position: absolute;
+  bottom: 27px;
+  left: 0;
+  width: 255px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.648);
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+  border-bottom-left-radius: 20px ;
+  border-bottom-right-radius: 20px;
+}
+
+.restaurant-item:hover .restaurant-content {
+  opacity: 4;
+}
+
+.restaurant-name {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.restaurant-categories {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.category-text {
+  margin-right: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-location {
+  font-size: 0.8em;
+  color: white;
+  
+}
+
+.restaurant-offers {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.offer-text {
+  
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+}
+
+.offer-time {
+  font-size: 0.8em;
+  color: white;
+}
+
+.restaurant-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.price-text {
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+}
+
+
+.restaurant-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+ 
+
+
+ 
+
+
+    </style>
+</head>
+<body>
+  
+  <header>
+    <div class="navbar">
+
+        <div class="nav-logo border" >
+            <div class="logo"><img src="../logo.png" style="height: 50px; border-radius: 5px;"/></div>
+        </div>
+
+        <div class="nav-address border">
+            <p class="add-first">Deliver to</p>
+            <div class="add-icon">
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="add-second"><b>India</b></p>
+            </div>
+        </div>
+
+        <div class="nav-search">
+            <input placeholder="Search Restaurants" class="search-input">
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+
+        <div class="nav-Login border">
+          <p class="nav-first"><a href="../Login-SignUp-Download/LoginIn.html" style="color: #FFFDD0; text-decoration: none;">   Login</a> </p>
+        </div>
+
+        <div class="nav-Signup border">
+            <p class="nav-first"><a href="../Login-SignUp-Download/SignUp.html" style="color: #FFFDD0; text-decoration: none;">  SignUp</a></p>
+
+          </div>
+
+          <div class="nav-download border">
+            <p class="nav-first"><a href="../Login-SignUp-Download/download-app/download.html" style="color: #FFFDD0; text-decoration: none;"> Download App</a> </p>
+
+          </div>
+
+          <a href="#" style="color: #FFFDD0;"><i class="fa-regular fa-user" style="font-size: x-large;"></i></a>
+    </div>
+    
+    
+    <div class="panel">
+        <div class="panel-all">
+            
+            <a href="#" style="color: #FFFDD0; text-decoration: none;"><i class="fa-solid fa-bars" style="font-size: x-large;"></i></a>
+        </div>
+
+        <div class="panel-ops ">
+          <p><a href="../index.html" style="color: #FFFDD0; text-decoration: none; margin-left: 2.5%;">HOME</a></p>
+            <p><a href="#" style="color: #FFFDD0; text-decoration: none;">OFFERS</a></p>
+            <p><a href="../about/about.html" style="color: #FFFDD0; text-decoration: none;">ABOUT US</a></p>
+            <p><a href="../feedback/survey.html" style="color: #FFFDD0; text-decoration: none;">FEEDBACK</a></p>
+            <p><a href="../help/help.html" style="color: #FFFDD0; text-decoration: none;">HELP</a></p>
+        </div>
+        <div class="panel-deals" >
+            <div class="nav-cart border">
+                
+                <a href="../Menu/Final Shopping Cart.html" style="color: #FFFDD0; text-decoration: none;"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+              </div>
+        </div>
+      </div>
+     </header>
+<br>
+<div class="top">
+
+   <h1>Pizza</h1> <br>
+  <p> Cheesilicious pizzas to make every day extraordinary.</p><br><br>
+  <form>
+    <select class = "filter" name="filter" id="filter">
+        <option value="Filter">Filter</option>
+        <option value="all">All</option>
+        <option value="Veg">Veg</option>
+        <option value="Non-Veg">Non-Veg</option>
+      </select>
+    </select>&nbsp;
+    <select class= "sort-by" name="sort-by" id="sort-by">
+        <option value="Sort-by">Sort-By</option>
+        <option value="default">Default</option>
+        <option value="rating">Rating</option>
+        <option value="price-low">Price (Low to High)</option>
+        <option value="price-high">Price (High to Low)</option>
+      </select>
+  &nbsp;
+   <button>Pure Veg</button>&nbsp;&nbsp;
+  <button>Less than 30 mins</button>&nbsp;&nbsp;
+  <button>Rs.300 - Rs.600</button>&nbsp;&nbsp;
+  <button>Less than Rs.300</button>
+</form><br><br><br>
+ <h2> Restaurants to Explore</h2></div>
+ <div class="restaurant-grid">
+ <div class="restaurant-item">
+    <img src="LaPino'z.jpg" alt="LaPino'z" >
+    
+    <div class="restaurant-content">
+      <h3 class="restaurant-name" style="color: white;">LaPino'z</h3>
+      <div class="restaurant-categories">
+        <span class="category-text" style="color: white;">European, Asian, Italian</span>
+        <span class="category-location" style="color: white;">Chembur</span>
+      </div>
+      <div class="restaurant-offers">
+        <span class="offer-time">4.4 - 35-40 mins</span>
+      </div>
+      <div class="restaurant-price">
+        <span class="price-text">10% OFF ABOVE 1500</span>
+      </div>
+    </div>
+  </div>
+   
+  <div class="restaurant-item">
+    <img src="Mojo.jpg" alt="Mojo">
+    
+    <div class="restaurant-content">
+      <h3 class="restaurant-name" style="color: white;">Mojo</h3>
+      <div class="restaurant-categories">
+        <span class="category-text" style="color: white;"> Italian</span>
+        <span class="category-location" style="color: white;">Ghatkopar</span>
+      </div>
+      <div class="restaurant-offers">
+        <span class="offer-time">4.6 - 22-32 mins</span>
+      </div>
+      <div class="restaurant-price">
+        <span class="price-text">30% OFF UPTO 2500</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="restaurant-item">
+    <img src="Pizza Hut.jpg" alt="Pizza Hut">
+    
+    <div class="restaurant-content">
+      <h3 class="restaurant-name" style="color: white;">Pizza Hut</h3>
+      <div class="restaurant-categories">
+        <span class="category-text" style="color: white;">European, Italian</span>
+        <span class="category-location" style="color: white;">Chembur</span>
+      </div>
+      <div class="restaurant-offers">
+        <span class="offer-time">4.4 -  35-40 mins</span>
+      </div>
+      <div class="restaurant-price">
+        <span class="price-text">10% OFF ABOVE 1500</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="restaurant-item">
+    <img src="irsih.jpg" alt="Oven story">
+    
+    <div class="restaurant-content">
+      <h3 class="restaurant-name" style="color: white;">Oven Story</h3>
+      <div class="restaurant-categories">
+        <span class="category-text" style="color: white;">Italian</span>
+        <span class="category-location" style="color: white;">Santacruz East</span>
+      </div>
+      <div class="restaurant-offers">
+        <span class="offer-time">4.1 - 30-42 mins</span>
+      </div>
+      <div class="restaurant-price">
+        <span class="price-text">50% OFF UPTO 100</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="restaurant-item">
+   <img src="Crusto.jpg" alt="LaPino'z">
+    
+    <div class="restaurant-content">
+      <h3 class="restaurant-name" style="color: white;">Chicago Pizza</h3>
+      <div class="restaurant-categories">
+        <span class="category-text" style="color: white;">Italian</span>
+        <span class="category-location" style="color: white;">Chembur</span>
+      </div>
+      <div class="restaurant-offers">
+        <span class="offer-time">3.8 - 35-40 mins</span>
+      </div>
+      <div class="restaurant-price">
+        <span class="price-text">Rs.125 OFF ABOVE Rs.199</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="restaurant-item">
+    <img src="Juno's.jpg" alt="Juno's">
+    
+    <div class="restaurant-content">
+      <h3 class="restaurant-name" style="color: white;">Juno's Pizza</h3>
+      <div class="restaurant-categories">
+        <span class="category-text" style="color: white;">Mexican, Italian</span>
+        <span class="category-location" style="color: white;">Vile Parle</span>
+      </div>
+      <div class="restaurant-offers">
+        <span class="offer-time">4.2 - 45-50 mins</span>
+      </div>
+      <div class="restaurant-price">
+        <span class="price-text">20% OFF ABOVE 1700</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="restaurant-item">
+    <img src="GreenDot.jpg" alt="GreenDot">
+    
+    <div class="restaurant-content">
+      <h3 class="restaurant-name" style="color: white;">GreenDot Pizza</h3>
+      <div class="restaurant-categories">
+        <span class="category-text" style="color: white;">European, Asian, Italian</span>
+        <span class="category-location" style="color: white;">Bandra</span>
+      </div>
+      <div class="restaurant-offers">
+        <span class="offer-time">4.4 - 35-40 mins</span>
+      </div>
+      <div class="restaurant-price">
+        <span class="price-text">Rs.100 OFF ABOVE Rs.749</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="restaurant-item">
+    <img src="LeanCrust.jpg" alt="LeanCrust">
+    
+    <div class="restaurant-content">
+      <h3 class="restaurant-name" style="color: white;">LeanCrust Pizza</h3>
+      <div class="restaurant-categories">
+        <span class="category-text" style="color: white;">Italian</span>
+        <span class="category-location" style="color: white;">Chembur</span>
+      </div>
+      <div class="restaurant-offers">
+        <span class="offer-time">4.1 - 40-45 mins</span>
+      </div>
+      <div class="restaurant-price">
+        <span class="price-text">10% OFF ABOVE 1500</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br><br>
+<footer>
+  <div class="foot-panel1">
+      <a href="Pizza.html" style="text-decoration: none; color: #FFFDD0;"> Back to Top</a> 
+  </div>
+
+  <div class="foot-panel2">
+    <ul>
+        <p><b>Get to Know us</b></p>
+        <a>Careers</a>
+        <a>Blog</a>
+        <a>About Tasty Trails</a>
+        <a>Investor Reations</a>
+        <a>Tasty Trails Devices</a>
+        <a>Tasty Trails Science</a>
+    </ul>
+
+    <ul>
+        <p><b>Make Money with Us</b></p>
+        <a>Sell products on Tasty Trails</a>
+        <a>Sell on Tasty Trails Business</a>
+        <a>Sell apps on Tasty Trails</a>
+        <a>Become an Affiliate</a>
+        <a>Adevertise Your Products</a>
+        <a>Self-Publish with Us</a>
+        <a>Host an Tasty Trails Hub</a>
+        <a>See more Make Money with Us</a>
+    </ul>
+
+    <ul>
+        <p><b>Tasty Trails Payment Products</b></p>
+        <a>Tasty Trails Business Card</a>
+        <a>Shop with Points</a>
+        <a>Reload Your Balance</a>
+        <a>Tasty Trails Convertor</a>
+    </ul>
+
+    <ul>
+        <p><b>Let Us Help You</b></p>
+        <a>Tasty Trails and COVID-19</a>
+        <a>Your Account</a>
+        <a>Your Orders</a>
+        <a>Shopping Rates & Policies</a>
+        <a>Returns & Replacements</a>
+        <a> Manage Your Content and Devices</a>
+        <a>Tasty Trails Assistant</a>
+        <a>Help</a>
+
+    </ul>
+</div>
+
+<div class="foot-panel3">
+    <div class="logo"><img src="../logo.png" style="height: 60px; width: 100px;"></div>
+</div>
+
+<div class="foot-panel4">
+    <div class="pages">
+        <a>Conditions of Use</a>
+        <a>Privacy Notice</a>
+        <a> Your ads Privacy Choices</a>
+    </div>
+    
+    <div class="copyright">
+        &copy; 1996-2024, TastyTrails.com, Inc. or its affiliates
+    </div>
+</div>
+</footer>
+
+</body>
+</html>

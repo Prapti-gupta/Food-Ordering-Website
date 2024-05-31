@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbeque-Nation Menu</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Menu-styles.css"/>
+    <script>
+        function addToCart(itemName, itemPrice) {
+            // Assuming you're using localStorage to store cart items
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let existingItem = cart.find(cartItem => cartItem.name === itemName);
+            if (existingItem) {
+                existingItem.quantity++; // If item already exists in cart, increment quantity
+            } else {
+                // If item doesn't exist, add it with quantity set to 1
+                cart.push({ name: itemName, price: itemPrice, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="nav-logo border" >
+                <div class="logo"><img src="../logo.png" style="height: 50px; border-radius: 5px;"/></div>
+            </div>
+
+            <div class="nav-address border">
+                <p class="add-first">Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-second"><b>India</b></p>
+                </div>
+            </div>
+
+            <div class="nav-search">
+               
+                <input placeholder="Search Restaurants" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div class="nav-Login border">
+              <p class="nav-first"><a href="../Login-SignUp-Download/LoginIn.html" style="color: #FFFDD0; text-decoration: none;">   Login</a> </p>
+            </div>
+
+            <div class="nav-Signup border">
+                <p class="nav-first"><a href="../Login-SignUp-Download/SignUp.html" style="color: #FFFDD0; text-decoration: none;">  SignUp</a></p>
+ 
+              </div>
+
+              <div class="nav-download border">
+                <p class="nav-first"><a href="../Login-SignUp-Download/download-app/download.html" style="color: #FFFDD0; text-decoration: none;"> Download App</a> </p>
+ 
+              </div>
+
+              <a href="#" style="color: #FFFDD0;"><i class="fa-regular fa-user" style="font-size: x-large;"></i></a>
+        </div>
+        
+        
+        <div class="panel">
+            <div class="panel-all">
+                
+                <a href="#" style="color: #FFFDD0; text-decoration: none;"><i class="fa-solid fa-bars" style="font-size: x-large;"></i></a>
+            </div>
+ 
+            <div class="panel-ops ">
+                <p><a href="../index.html" style="color: #FFFDD0; text-decoration: none; margin-left: 2.5%;">HOME</a></p>
+                <p><a href="#" style="color: #FFFDD0; text-decoration: none;">OFFERS</a></p>
+                <p><a href="../about/about.html" style="color: #FFFDD0; text-decoration: none;">ABOUT US</a></p>
+                <p><a href="../feedback/survey.html" style="color: #FFFDD0; text-decoration: none;">FEEDBACK</a></p>
+                <p><a href="../help/help.html" style="color: #FFFDD0; text-decoration: none;">HELP</a></p>
+            </div>
+            <div class="panel-deals" >
+                <div class="nav-cart border">
+                    
+                    <a href="../Menu/Final Shopping Cart.html" style="color: #FFFDD0; text-decoration: none;"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+                  </div>
+            </div>
+          </div>
+   
+
+    </header>
+    
+     <div class="main_box">
+        <br/>
+     <div class="container">
+        <img src="../Restaurants/Barbeque-Nation.jpg" alt="bbq-nation" style="width: 768px; height: 400px;">
+        <div class="bottom-center">Barbeque Nation</div>
+        <div class="bottom-right">Rating: <br/> 4.2 <i class="fa-solid fa-star"></i></div>
+     </div>
+     <br/>
+     <h3 style="padding-left: 20px;">Offers: </h3>
+
+     <div class="offer-box">
+        <div class="box-content">
+            <p>
+            <!--<img src="discount.png" width="20px"><br/>--><b>50% OFF UPTO &#8377; 100</b></p>
+            
+        </div>
+     </div>
+
+     <div class="offer-box">
+        <div class="box-content">
+            <p><b>FLAT &#8377;125 OFF</b> </p>
+        </div>
+     </div>
+
+     <div class="offer-box">
+        <div class="box-content">
+            <p><b> &#8377;75 OFF ON CARDS</b> </p>
+        </div>
+     </div>
+
+     <div class="offer-box">
+        <div class="box-content">
+            <p><b> FREEBIES </b> </p>
+        </div>
+     </div><br/><br/>
+
+     <p style="margin-left: 10px; color: green;"><input type="checkbox" id="Veg"><b> Veg Only</b></p><br/>
+
+     <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+     <h2 style="margin-left: 10px; ;">Recommended(8) </h2>
+<br/><br/>
+
+
+     <div class="dish">
+        
+        <img src="veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="bbq-nation/Dish1.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 200px; width: 300px;">
+        
+        <p><b>Barbeque In A Box (Veg) Premium</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 999/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Serves 3 | [Six Starters] - Tandoori Paneer Tikka (6 Pcs) + Churrasco Pineapple (6 Pcs) + Veg Kebabs (6 Pcs) + Veg Rolls (6 Pcs) + Cheese Triangle (6 Pcs) + Assorted Grilled Corn & Veg (2 Nos) [Main Couse] - Paneer Butter Masala + Mix Veg + Dal Makhani + Veg Dum Biryani + Parathas (3 Nos) [Three Desserts] Angoori Jamun (8 Pcs) + Moong Dal Halwa + Brownie.</p><p style="color: rgb(62, 62, 62);">Accompanied with Mint Chutney, Salan, Dips & Salad. Barbeque Nation buffet served at home.</p>
+        <button onclick="addToCart('Barbeque In A Box (Veg) Premium', 999)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+<br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+    <div class="dish">
+        
+        <img src="veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="bbq-nation/dish2.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 200px; width: 300px;">
+        
+        <p><b>Barbeque in a Box (Veg Biryani) Regular</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 749/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Serves 2 | Kebabs & Biryani feast: [Two Starters] - Veg Rolls (6 Pcs) + Tandoori Paneer Tikka (6 Pcs) [Veg Dum Biryani- 2 Nos] [Dessert] - Angoori Gulab Jamun (8 Pcs) [Accompanied with Salan, Dips & Salad]. Earlier called as Biryanis and Kebabs Box (Veg) Regular</p>
+        <button onclick="addToCart('Barbeque in a Box (Veg Biryani) Regular', 749)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+    <div class="dish">
+        
+        <img src="veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="bbq-nation/dish3.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 200px; width: 300px;">
+        
+        <p><b>Classic Meal Box (Veg) Premium</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 829/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Serves 3 | Scrumptious Box of India?s Favourites - Paneer Butter Masala (2 Portions), Dal Makhani, Mix Veg, Barbecue Veg Dum Biryani, Steamed Basmati Rice, Parathas (3 Nos) Angoori Gulab Jamun (8 Nos), Chocolate Brownie, Moong Dal Halwa, Mint Chutney, Raita, Garden Salad & Pickle. Share with your loved ones.</p>
+        <button onclick="addToCart('Classic Meal Box (Veg) Premium', 829)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+    <div class="dish">
+        
+        <img src="veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="bbq-nation/Dish4.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 200px; width: 300px;">
+        
+        <p><b>Premium Veg Thali</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 429/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Serves 1 | Veg Dum Biryani + Tandoori Paneer Tikka (6 Pcs) + Butter Paneer Masala + Dal Makhani + Dry Mix Veg + Parathas (2 Nos) + Small Angoori Gulab Jamun (4Pcs). A wholesome North-Indian Thali served with Raita & Salad. Earlier called as Shahi Veg Biryani Thali.</p>
+        <button onclick="addToCart('Premium Veg Thali', 429)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+    <div class="dish">
+        
+        <img src="non-veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="bbq-nation/dish5.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 200px; width: 300px;">
+        
+        <p><b>Barbeque in a Box (Non Veg) Premium</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 1049/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Serves 3 | [Six Starters] Chicken Tikka (6 Pcs) + Reshmi Chicken Wings (6 Pcs) + Fish Tikka (6 Pcs) + Veg Rolls (6 Pcs) + Veg Kebabs (6 Pcs) + Chicken Seekh Kebab (6 Pcs). [Main Course] - Chicken Butter Masala + Egg Curry + Dal Makhani + Chicken Dum Biryani + Paratha (3 Pcs) [Three Desserts] - Angoori Gulab Jamun (8Pcs) + Brownie + Moong Dal Halwa. Accompanied with Mint Chutney, Salan, Dips & Salad. Barbeque Nation Buffet served at Home.</p>
+        <button onclick="addToCart('Barbeque in a Box (Non Veg) Premium', 1049)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+    <div class="dish">
+        
+        <img src="non-veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="bbq-nation/dish6.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 200px; width: 300px;">
+        
+        <p><b>Barbeque in a Box (Non Veg) Premium (With Prawns and Mutton)</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 1249/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Serves 3 | [Six Starters] - Chilly Garlic Prawns (6 Pcs) + Chicken Tikka (6 Pcs) + Chicken Wings (6 Pcs) + Fish Tikka (6 Pcs) + Veg Kebabs (6 Pcs) + Veg Rolls (6 Pcs) [Main Course] - Butter Chicken + Mutton Rogan Josh + Dal Makhani + Chicken Dum Biryani + Parathas (3 Nos) [Three Desserts] - Angoori Jamun (8 Pcs) + Moong Dal Halwa + Brownie - Accompanied with Mint Chutney, Salan, Dips & Salad. A premium Barbeque Nation buffet served at home.</p>
+        <button onclick="addToCart('Barbeque in a Box (Non Veg) Premium (With Prawns and Mutton)', 1249)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+    <div class="dish">
+        
+        <img src="non-veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="bbq-nation/dish7.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 200px; width: 300px;">
+        
+        <p><b>Barbeque in a Box (Non Veg Overload)</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 1299/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Serves 3 | [Five Starters] Chilly Garlic Prawns (6 Pcs) + Chicken Tikka (6 Pcs) + Tandoori Tangdi (2 Pcs) + Chicken Wings (6 Pcs) + Fish Tikka (6 Pcs) + [Main Course] Butter Chicken Masala + Mutton Rogan Josh + Egg Curry + Chicken Dum Biryani + Parathas (3 Pcs) [Three Desserts] Angoori Gulab Jamun (8 Nos) + Brownie + Moong Dal Halwa. Accompanied with Mint Chutney, Salan, Dips & Salad.</p>
+        <button onclick="addToCart('Barbeque in a Box (Non Veg Overload)', 1299)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+    <div class="dish">
+        
+        <img src="non-veg-icon.png" width="20px" style="margin-left: 20px;" ><br/>
+
+        <img src="bbq-nation/dish8.jpeg" align="right" style="margin-right: 20px; border-radius: 10px; height: 200px; width: 300px;">
+        
+        <p><b>Barbeque in a Box (Chicken Biryani Overload)</b></p>
+        <p style="color: rgb(62, 62, 62);">&#8377; 1129/-</p><br/>
+        <p style="color: rgb(62, 62, 62);">Serves 3 | Chicken Dum Biryanis (3 Portions) + Tandoori Tangdi (2 Pcs) + Chicken Tikka (6 Pcs) + Fish Tikka (6 Pcs) + Chilly Garlic Prawns (6 Pcs) + Chicken Wings (6 Pcs) + Angoori Gulab Jamun (8 Pcs) + Brownie + Moong Dal Halwa. Accompanied with Mint Chutney, Salan, Dips & Salad. A perfect Biryani & Kebabs Feast. Earlier called as Biryanis and Kebabs Box (Chicken) Premium.</p>
+        <button onclick="addToCart('Barbeque in a Box (Chicken Biryani Overload)', 1129)" style="margin-left: 640px;"> Add to Cart</button> 
+    
+    </div>
+    <br/>
+    <hr style="margin-left: 10px; margin-right: 10px; color: #FFFDD0;"/><br/>
+
+<p align="center" style="font-size: medium;"><b> View More</b><i class="fa-solid fa-angle-down"></i></p>
+
+     </div>
+
+
+
+
+    <footer>
+        <div class="foot-panel1">
+            <a href="Menu.-BBQ-Nation.html" style="text-decoration: none; color: #FFFDD0;"> Back to Top</a> 
+        </div>
+    
+        <div class="foot-panel2">
+            <ul>
+                <p><b>Get to Know us</b></p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Reations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+            </ul>
+    
+            <ul>
+                <p><b>Make Money with Us</b></p>
+                <a>Sell products on Amazon</a>
+                <a>Sell on Amazon Business</a>
+                <a>Sell apps on Amazon</a>
+                <a>Become an Affiliate</a>
+                <a>Adevertise Your Products</a>
+                <a>Self-Publish with Us</a>
+                <a>Host an Amzon Hub</a>
+                <a>See more Make Money with Us</a>
+            </ul>
+    
+            <ul>
+                <p><b>Amazon Pyment Products</b></p>
+                <a>Amazon Business Card</a>
+                <a>Shop with Points</a>
+                <a>Reload Your Balance</a>
+                <a>AmazonCurrency Convertor</a>
+            </ul>
+    
+            <ul>
+                <p><b>Let Us Help You</b></p>
+                <a>Amazon and COVID-19</a>
+                <a>Your Account</a>
+                <a>Your Orders</a>
+                <a>Shopping Rates & Policies</a>
+                <a>Returns & Replacements</a>
+                <a> Manage Your Content and Devices</a>
+                <a>Amazon Assistant</a>
+                <a>Help</a>
+    
+            </ul>
+        </div>
+    
+        <div class="foot-panel3">
+            <div class="logo"><img src="logo.png" style="height: 60px; width: 100px;"></div>
+        </div>
+    
+        <div class="foot-panel4">
+            <div class="pages">
+                <a>Conditions of Use</a>
+                <a>Privacy Notice</a>
+                <a> Your ads Privacy Choices</a>
+            </div>
+            
+            <div class="copyright">
+                (c) 1996-2024, tastytrails.com, Inc. or its affiliates
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
